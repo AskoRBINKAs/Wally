@@ -5,7 +5,10 @@ namespace Wally
 {
     public partial class Form1 : Form
     {
-        public static Core core =  new Core();
+        private static string _weebpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "wp.exe"); 
+        private static string _jsonpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "save.json"); 
+        private static string _cfgpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "conf.cfg"); 
+        public static Core core =  new Core(_weebpath,_jsonpath,_cfgpath);
        
         private Form _activeForm;
         public Form1()
@@ -18,9 +21,9 @@ namespace Wally
             string[] requiredModules = { "wp.exe", "wp-headless.exe", "weebp.dll", "weebp.lib", "mpv.exe" };
             foreach (string module in requiredModules)
             {
-                if (!File.Exists(module))
+                if (!File.Exists(Application.ExecutablePath.ToString().Replace("Wally.exe","")+ module))
                 {
-                    MessageBox.Show("Caused error while starting program. Check existing next files in Wally directory:\nwp.exe\nwp-headless.exe\nweebp.dll\nweebp.lib\nmpv.exe\n");
+                    MessageBox.Show("Caused error while starting program. Check existing next files in Wally directory:\nwp.exe\nwp-headless.exe\nweebp.dll\nweebp.lib\nmpv.exe\n"+Application.ExecutablePath);
                     Application.Exit();
                     break;
                 }
@@ -30,13 +33,18 @@ namespace Wally
         
         private void Form1_Load(object sender, EventArgs e)
         {
+           
             CheckExistingModules();
             this.BackColor = ColorTranslator.FromHtml("#30343F");
             panel1.BackColor = ColorTranslator.FromHtml("#19369F");
             OpenChildForm(new Forms.Gallery(), sender);
             GalleryButton.BackColor = ColorTranslator.FromHtml("#30343F");
+            //overide paths for program
+            //core.JSONSavePath = Application.ExecutablePath.ToString().Replace("Wally.exe", "") + core.JSONSavePath;
+            //core.WPPath = Application.ExecutablePath.ToString().Replace("Wally.exe", "") + core.WPPath;
+            //core.ConfigFile = Application.ExecutablePath.ToString().Replace("Wally.exe", "") + core.ConfigFile;
             //init labels
-            if(core.Language == "ru")
+            if (core.Language == "ru")
             {
                 SettingsButton.Text = Resources.RU_locale.SettingsButtonText;
                 GalleryButton.Text = Resources.RU_locale.GalleryButtonText;

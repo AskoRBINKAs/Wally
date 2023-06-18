@@ -53,12 +53,11 @@ namespace Wally.Forms
         private void SetStartup()
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
+            if (rk == null) return;
             if (StartupBox.Checked)
                 rk.SetValue("Wally", Application.ExecutablePath);
             else
                 rk.DeleteValue("Wally", false);
-
         }
 
         private void StartupBox_CheckedChanged(object sender, EventArgs e)
@@ -69,7 +68,13 @@ namespace Wally.Forms
         private bool IsInStartup()
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true);
-            if (rk.GetValue("Wally") == null) return false;
+            if (rk == null)
+            {
+                if(rk.GetValue("Wally") == null)
+                {
+                    return false;
+                }
+            }
             return true;
         }
 

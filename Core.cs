@@ -12,19 +12,21 @@ namespace Wally
 {
     public class Core
     {
-        public readonly string Version = "v1.0";
-        public readonly string WPPath = "wp.exe";
-        public readonly string JSONSavePath = "save.json";
-        public readonly string ConfigFile = "conf.cfg";
-        public StringBuilder logs;
+        public string Version = "v1.0";
+        public string WPPath;
+        public string JSONSavePath;
+        public string ConfigFile;
         public string Language = "en";
         public string LastWallpaperName = "";
-        
+        public StringBuilder logs;
         public int WeebPID = -1;
         public List<Wallpaper> Walls;
-        public Core()
+        public Core(string wpath,string jsonpath,string cfgpath)
         {
             logs = new StringBuilder();
+            WPPath = wpath;
+            JSONSavePath = jsonpath;
+            ConfigFile = cfgpath;
             LoadConfig();
             GetMPVPID();
             LoadWallpapers();
@@ -32,6 +34,8 @@ namespace Wally
 
         public void SaveConfig()
         {
+            if (!File.Exists(ConfigFile))
+                File.Create(ConfigFile).Close();
             using(StreamWriter sw = new StreamWriter(ConfigFile))
             {
                 sw.WriteLine(Language);
@@ -163,6 +167,7 @@ namespace Wally
             process.StartInfo.RedirectStandardOutput = true;
             process.StartInfo.Arguments = " run mpv --force-window=yes --loop=inf --no-audio --player-operation-mode=pseudo-gui --wid=" + WeebPID.ToString() + " \"" +PathToVideo + "\"";
             process.Start();
+            Log("Setting wallpaper from " + PathToVideo);
         }
     }
 }

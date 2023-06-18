@@ -37,5 +37,10 @@ namespace Wally.Forms
             Form1.core.SetWallpaper(ref PathToVideo);
             Form1.core.LastWallpaperName = Title;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
