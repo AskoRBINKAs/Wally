@@ -28,6 +28,7 @@
 }
 ```
 3. Выбрать этот файл кнопкой Add
+4. ВАЖНО - расположите обои в отдельном каталоге, который не будет удаляться и т.д.! Программа чувствительна к пути расположения видео и превью! Также избегайте кириллицы в путях установки утилиты и расположения обоев
 
 ## Баги
 1. Проблема со сменой языка - кнопки Gallery/Обои и Settings/Параметры меняются только при перезагрузке приложения. Остальный поля работают корректно
@@ -63,6 +64,7 @@ Utility for setting video files as wallpaper. It is based on [Weebp](https://git
 }
 ```
 3. Press "Add" in app
+4. IMPORTANT -  Please, place wallpapers in stable directory. Program very sensetive for path to video and preview!!! Also, try to avoid cyrillic symbols in installation path and location wallpapers
 
 ## Bugs
 1. Localization - after selecting language you need to restart program to apply changes
