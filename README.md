@@ -1,5 +1,5 @@
 # Wally
-Утилита для установки видеофайлов как обоев. В основе лежит программа [Weebp](https://github.com/Francesco149/weebp) и плеер [MPV](https://mpv.io)
+Утилита для установки видеофайлов как обоев. В основе лежит программа [Weebp](https://github.com/Francesco149/weebp) и плеер [MPV](https://mpv.io).
 <br>
 <br>
 ![](https://github.com/AskoRBINKAs/Wally/blob/master/0QUWXk1ghbU.jpg)
@@ -37,3 +37,37 @@
 1. Добавить создание и воспроизведение обоев из плейлистов
 2. Оптимизация
 3. Добавить возможность использования html страниц как обои
+
+# ENGLISH
+Utility for setting video files as wallpaper. It is based on [Weebp](https://github.com/Francesco149/weebp) and [MPV](https://mpv.io).
+<br>
+## Features
+- [x] Using video (.mp4; .avi; .gif; .webm; .mov; .mkv) as wallpaper
+- [x] Add program to autorun
+- [x] Roll up to ray
+- [x] Support 2 languages - Russian and English
+
+## System requirements
+1. OS - Windows 7 or newer (Win8 not tested)
+2. .NET 6
+3. Administrator rights are not required
+
+## How to add wallpapers
+1. Place 2 files in one directory - video and preview
+2. Create "project.json" file with next text:
+```json
+{
+"Name":"Car",
+"PathToVideo":"X6M.mp4",
+"PathToLogo":"preview.jpg"
+}
+```
+3. Press "Add" in app
+
+## Bugs
+1. Localization - after selecting language you need to restart program to apply changes
+2. Bug with autorun - sometimes app cannot read config files and load all wallpapers or start playing video. Solution - restart manualy
+
+## TODO:
+1. Add playlists system
+2. Optimization 
