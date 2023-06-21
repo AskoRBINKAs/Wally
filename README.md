@@ -34,7 +34,7 @@
 
 ## Баги
 1. Проблема со сменой языка - кнопки Gallery/Обои и Settings/Параметры меняются только при перезагрузке приложения. Остальный поля работают корректно
-2. Возможны проблемы с автозагрузкой. Решение - создать ярлык и добавить его в папку автозагрузки
+2. Плеер MPV потребляет много ОЗУ. Текущее решение - лок фреймрейта в 15 FPS
 
 ## Планы на будущее
 1. Добавить создание и воспроизведение обоев из плейлистов
@@ -71,8 +71,9 @@ Utility for setting video files as wallpaper. It is based on [Weebp](https://git
 Another way - click Create and add needed files (preview file is not neccessary)
 ## Bugs
 1. Localization - after selecting language you need to restart program to apply changes
-2. Bug with autorun - sometimes app cannot read config files and load all wallpapers or start playing video. Solution - restart manualy
+2. MPV used a lot of memory (in comparing with Wallpaper Engine). Current solve - setting video playing in 15 FPS;
 
 ## TODO:
 1. Add playlists system
-2. Optimization 
+2. Optimization (Maybe change videoplayer)
+3. Add WebView for playing from URL or HTML Projects
