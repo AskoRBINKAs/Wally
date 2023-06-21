@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using MediaToolkit.Model;
-using MediaToolkit.Options;
-using MediaToolkit.Util;
+
 
 namespace Wally
 {
@@ -222,16 +220,6 @@ namespace Wally
             
         }
 
-        public TimeSpan _duritaion(Wallpaper wall)
-        {
-            var inputFile = new MediaFile { Filename = wall.PathToVideo };
 
-            using (var engine = new MediaToolkit.Engine())
-            {
-                engine.GetMetadata(inputFile);
-            }
-
-            return inputFile.Metadata.Duration;
-        }
     }
 }

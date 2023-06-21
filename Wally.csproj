@@ -29,10 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediaToolkit" Version="1.1.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\no-preview.png" />
   </ItemGroup>
 
