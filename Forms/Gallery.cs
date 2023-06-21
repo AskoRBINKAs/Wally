@@ -18,7 +18,13 @@ namespace Wally.Forms
             InitializeComponent();
         }
 
-        private void Gallery_Load(object sender, EventArgs e)
+        public void Reload(object sender, EventArgs e)
+        {
+            this.Controls.Clear();
+            this.InitializeComponent();
+            Gallery_Load(sender,e);
+        }
+        public void Gallery_Load(object sender, EventArgs e)
         {
             this.BackColor = ColorTranslator.FromHtml("#30343F");
             StopButton.BackColor = Color.Red;
@@ -43,10 +49,11 @@ namespace Wally.Forms
             foreach (Wallpaper wallpaper in Form1.core.Walls)
             {
                 if (wallpaper.IsCorrupted) continue;
-                Forms.WallpaperItem item = new WallpaperItem();
+                Forms.WallpaperItem item = new WallpaperItem(this,wallpaper);
                 item.Title = wallpaper.Name;
                 item.PathToLogo = wallpaper.PathToLogo;
                 item.PathToVideo = wallpaper.PathToVideo;
+                item.index = wallpaper.Index;
                 flowLayoutPanel1.Controls.Add(item);
             }
         }

@@ -16,18 +16,30 @@ namespace Wally.Forms
         public string Title;
         public string PathToVideo;
         public string PathToLogo;
-        public Wallpaper wallpaper; 
-        public WallpaperItem()
+        public int index;
+        public Wallpaper wallpaper;
+        private Gallery _gallery;
+
+        public WallpaperItem(Gallery gallery,Wallpaper wallpaper)
         {
             InitializeComponent();
+            _gallery = gallery;
+            this.wallpaper = wallpaper;
         }
 
 
         private void WallpaperItem_Load(object sender, EventArgs e)
         {
             SetWall.BackColor = Color.FromArgb(125,Color.Black);
-            if(PathToLogo!=null || PathToLogo!="") pictureBox1.Image = Image.FromFile(PathToLogo);
-
+            if (PathToLogo == "holder") 
+            {
+                pictureBox1.Image = Properties.Resources.no_preview;
+            }
+            else if(PathToLogo != null || PathToLogo != "")
+            {
+                pictureBox1.Image = Image.FromFile(PathToLogo);
+            }
+            pictureBox1.ContextMenuStrip = contextMenuStrip1;
             SetWall.Text = Title;
 
         }
@@ -41,6 +53,17 @@ namespace Wally.Forms
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.core.Walls.Remove(wallpaper);
+            _gallery.Reload(sender,e);
+        }
+
+        private void addToPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1.core.Walls.Add(wallpaper);
         }
     }
 }

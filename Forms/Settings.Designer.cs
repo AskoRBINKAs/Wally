@@ -51,14 +51,14 @@
             this.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.SettingsPanel.Location = new System.Drawing.Point(0, 0);
             this.SettingsPanel.Name = "SettingsPanel";
-            this.SettingsPanel.Size = new System.Drawing.Size(1168, 105);
+            this.SettingsPanel.Size = new System.Drawing.Size(1268, 105);
             this.SettingsPanel.TabIndex = 0;
             // 
             // LanguageLabel
             // 
             this.LanguageLabel.AutoSize = true;
             this.LanguageLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.LanguageLabel.Location = new System.Drawing.Point(1035, 10);
+            this.LanguageLabel.Location = new System.Drawing.Point(1135, 13);
             this.LanguageLabel.Name = "LanguageLabel";
             this.LanguageLabel.Size = new System.Drawing.Size(90, 15);
             this.LanguageLabel.TabIndex = 2;
@@ -67,7 +67,7 @@
             // LanguageBox
             // 
             this.LanguageBox.FormattingEnabled = true;
-            this.LanguageBox.Location = new System.Drawing.Point(1035, 34);
+            this.LanguageBox.Location = new System.Drawing.Point(1135, 37);
             this.LanguageBox.Name = "LanguageBox";
             this.LanguageBox.Size = new System.Drawing.Size(121, 23);
             this.LanguageBox.TabIndex = 1;
@@ -92,7 +92,7 @@
             this.DebugPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DebugPanel.Location = new System.Drawing.Point(0, 105);
             this.DebugPanel.Name = "DebugPanel";
-            this.DebugPanel.Size = new System.Drawing.Size(1168, 466);
+            this.DebugPanel.Size = new System.Drawing.Size(1268, 466);
             this.DebugPanel.TabIndex = 1;
             // 
             // LogLabel
@@ -112,7 +112,7 @@
             this.LoggingBox.Name = "LoggingBox";
             this.LoggingBox.ReadOnly = true;
             this.LoggingBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.LoggingBox.Size = new System.Drawing.Size(1144, 387);
+            this.LoggingBox.Size = new System.Drawing.Size(1244, 387);
             this.LoggingBox.TabIndex = 0;
             // 
             // InfoPanel
@@ -122,7 +122,7 @@
             this.InfoPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.InfoPanel.Location = new System.Drawing.Point(0, 537);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(1168, 34);
+            this.InfoPanel.Size = new System.Drawing.Size(1268, 34);
             this.InfoPanel.TabIndex = 2;
             // 
             // VersionLabel
@@ -130,11 +130,11 @@
             this.VersionLabel.AutoSize = true;
             this.VersionLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VersionLabel.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.VersionLabel.Location = new System.Drawing.Point(1127, 10);
+            this.VersionLabel.Location = new System.Drawing.Point(1236, 10);
             this.VersionLabel.Name = "VersionLabel";
-            this.VersionLabel.Size = new System.Drawing.Size(38, 15);
+            this.VersionLabel.Size = new System.Drawing.Size(29, 15);
             this.VersionLabel.TabIndex = 1;
-            this.VersionLabel.Text = "label3";
+            this.VersionLabel.Text = "V1.1";
             // 
             // label2
             // 
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 571);
+            this.ClientSize = new System.Drawing.Size(1268, 571);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.DebugPanel);
             this.Controls.Add(this.SettingsPanel);

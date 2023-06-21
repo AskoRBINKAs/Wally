@@ -58,10 +58,71 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PlaylistButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="PlaylistButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="PlaylistButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 28</value>
+  </data>
+  <data name="PlaylistButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 23</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PlaylistButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="PlaylistButton.Text" xml:space="preserve">
+    <value>Playlist</value>
+  </data>
+  <data name="&gt;&gt;PlaylistButton.Name" xml:space="preserve">
+    <value>PlaylistButton</value>
+  </data>
+  <data name="&gt;&gt;PlaylistButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PlaylistButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;PlaylistButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="CreateButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="CreateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CreateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 28</value>
+  </data>
+  <data name="CreateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 23</value>
+  </data>
+  <data name="CreateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="CreateButton.Text" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="&gt;&gt;CreateButton.Name" xml:space="preserve">
+    <value>CreateButton</value>
+  </data>
+  <data name="&gt;&gt;CreateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CreateButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;CreateButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="SwapButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="SwapButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
@@ -73,7 +134,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAA69AAAOvQFH+5Ct
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAA68AAAOvAGVvHJJ
         AAAAhElEQVRYR+3Uuw2FMBBEUXcJBUAhzhEV8CnQcg3LLBbZpMwma+lIq5u8CZ4oZhaKRiUalWhUolGJ
         RiUalWhUolGJRiUalWhUolHpOyY44BY5YYZ3QIWoV31AG3fIaz6gjzvkdR+wjTvk7T7ALXAB+8P8wX9r
         hfwO5IAckANyQA6IHmDlAZJIlkJN4MCPAAAAAElFTkSuQmCC
@@ -83,12 +144,11 @@
     <value>TopCenter</value>
   </data>
   <data name="SwapButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1113, 0</value>
+    <value>1209, -1</value>
   </data>
   <data name="SwapButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 32</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="SwapButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -102,7 +162,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;SwapButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -132,13 +192,13 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="SettingsButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="SettingsButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 28</value>
+    <value>301, 28</value>
   </data>
   <data name="SettingsButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 23</value>
@@ -159,7 +219,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;SettingsButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="GalleryButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -186,7 +246,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;GalleryButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="ExitButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -202,7 +262,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAADlAAAA5QGP5Zs8
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAADjAAAA4wEP5t+n
         AAAAxUlEQVRYR8XSQQrEIBAF0bn/pR0MIYh5tp3A9BTUpvyCCz+ttb/KWCljpYyVMlbKWCnj6YjOM47o
         PP2AjjaRM9o8ekBHOym02/4Bod2o0O6QcVJo1xXaXTJC8WZzk3GhyJyFMgZm0V3KuHGH7ixlTLhC21DG
         hCu0DWXcuEN3ljIGZtFdyrhQZM5CGaF4s7nJOCm06wrtLhkHhXajQrtDxlOhnRTaPXqANpEz2qQfoPOM
@@ -210,7 +270,7 @@
 </value>
   </data>
   <data name="ExitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1153, 0</value>
+    <value>1249, -1</value>
   </data>
   <data name="ExitButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 32</value>
@@ -228,7 +288,7 @@
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;ExitButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -237,7 +297,7 @@
     <value>0, 0</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 51</value>
+    <value>1284, 51</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2613,7 +2673,7 @@
     <value>0, 51</value>
   </data>
   <data name="ChildPanelDock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 610</value>
+    <value>1284, 610</value>
   </data>
   <data name="ChildPanelDock.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2667,7 +2727,7 @@
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1184, 661</value>
+    <value>1284, 661</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

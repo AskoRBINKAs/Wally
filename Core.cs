@@ -6,41 +6,57 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-
+using MediaToolkit.Model;
+using MediaToolkit.Options;
+using MediaToolkit.Util;
 
 namespace Wally
 {
     public class Core
     {
-        public string Version = "v1.0";
+        /*
+         * Methods and params for playlist now are empty, but in next updates will be created
+         */
+        public string Version = "v1.1";
         public string WPPath;
         public string JSONSavePath;
         public string ConfigFile;
+        public string PlaylistSavePath = "";
         public string Language = "en";
         public string LastWallpaperName = "";
         public StringBuilder logs;
         public int WeebPID = -1;
+        public int Framerate = 15;
         public List<Wallpaper> Walls;
-        public Core(string wpath,string jsonpath,string cfgpath)
+        public List<Wallpaper> Playlist;
+
+        public Core(string wpath,string jsonpath, string cfgpath)
         {
             logs = new StringBuilder();
             WPPath = wpath;
             JSONSavePath = jsonpath;
             ConfigFile = cfgpath;
+
             LoadConfig();
             GetMPVPID();
             LoadWallpapers();
+            LoadPlaylist();
+            
+            
         }
 
+        public void LoadPlaylist()
+        {
+            return;
+        }
+
+        public void SavePlaylist()
+        {
+            return;
+        }
         public void SaveConfig()
         {
-            if (!File.Exists(ConfigFile))
-                File.Create(ConfigFile).Close();
-            using(StreamWriter sw = new StreamWriter(ConfigFile))
-            {
-                sw.WriteLine(Language);
-                sw.WriteLine(LastWallpaperName);
-            }
+            return;
         }
         public void LoadConfig()
         {
@@ -76,7 +92,8 @@ namespace Wally
                 int counter = 0;
                 foreach(var wall in Walls)
                 {
-                    if (!File.Exists(wall.PathToVideo) || !File.Exists(wall.PathToLogo))
+                    wall.Index = counter;
+                    if (!File.Exists(wall.PathToVideo))
                     {
                         Log(wall.Name + " was corrupted, removed or replaced. Check it please");
                         wall.IsCorrupted = true;
@@ -119,6 +136,24 @@ namespace Wally
                 Log(e.ToString());
             }
         }
+        public void AddWallpaper(Wallpaper wallpaper)
+        {
+            Walls.Add(wallpaper);
+            using (StreamWriter sw = new StreamWriter(JSONSavePath, append: false))
+            {
+                sw.WriteLine(JsonSerializer.Serialize(Walls));
+            }
+            Log("Wallpaper was added successfully from redactor");
+
+        }
+        public void SaveWallpapers()
+        {
+            using (StreamWriter sw = new StreamWriter(JSONSavePath, append: false))
+            {
+                sw.WriteLine(JsonSerializer.Serialize(Walls));
+            }
+            Log("Wallpapers saved successfuly");
+        }
 
         public void KillPreviousMPV()
         {
@@ -130,6 +165,16 @@ namespace Wally
                 counter++;
             }
             Log(counter.ToString() + " MPV processes was killed");
+            try
+            {
+                Process killer = new Process();
+                killer.StartInfo.FileName = WPPath;
+                killer.StartInfo.Arguments = " killall";
+                killer.Start();
+            }
+            catch (Exception e){
+                Log(e.ToString());
+            }
 
         }
         public void GetMPVPID()
@@ -165,9 +210,28 @@ namespace Wally
             process.StartInfo.FileName = WPPath;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = " run mpv --force-window=yes --loop=inf --no-audio --player-operation-mode=pseudo-gui --wid=" + WeebPID.ToString() + " \"" +PathToVideo + "\"";
+            process.StartInfo.Arguments = " run mpv --force-window=yes --loop=inf --no-audio  --fps="+Framerate+" -no-correct-pts --player-operation-mode=pseudo-gui --wid=" + WeebPID.ToString() + " \"" +PathToVideo + "\"";
+            
             process.Start();
             Log("Setting wallpaper from " + PathToVideo);
+        }
+
+        
+        public void PlayPlaylist()
+        {
+            
+        }
+
+        public TimeSpan _duritaion(Wallpaper wall)
+        {
+            var inputFile = new MediaFile { Filename = wall.PathToVideo };
+
+            using (var engine = new MediaToolkit.Engine())
+            {
+                engine.GetMetadata(inputFile);
+            }
+
+            return inputFile.Metadata.Duration;
         }
     }
 }

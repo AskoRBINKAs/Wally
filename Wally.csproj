@@ -21,7 +21,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\no-preview.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Resources\Wally.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediaToolkit" Version="1.1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\no-preview.png" />
   </ItemGroup>
 
   <ItemGroup>

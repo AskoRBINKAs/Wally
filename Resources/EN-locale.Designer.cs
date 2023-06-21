@@ -70,6 +70,69 @@ namespace Wally.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Open.
+        /// </summary>
+        internal static string CreatorAddFileButtonText {
+            get {
+                return ResourceManager.GetString("CreatorAddFileButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Create.
+        /// </summary>
+        internal static string CreatorButtonText {
+            get {
+                return ResourceManager.GetString("CreatorButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Create.
+        /// </summary>
+        internal static string CreatorCreateButtonText {
+            get {
+                return ResourceManager.GetString("CreatorCreateButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name.
+        /// </summary>
+        internal static string CreatorNameLabel {
+            get {
+                return ResourceManager.GetString("CreatorNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Preview.
+        /// </summary>
+        internal static string CreatorPreviewLabel {
+            get {
+                return ResourceManager.GetString("CreatorPreviewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Create new wallpaper from files.
+        /// </summary>
+        internal static string CreatorTitleLabel {
+            get {
+                return ResourceManager.GetString("CreatorTitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Video.
+        /// </summary>
+        internal static string CreatorVideoLabel {
+            get {
+                return ResourceManager.GetString("CreatorVideoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Gallery.
         /// </summary>
         internal static string GalleryButtonText {

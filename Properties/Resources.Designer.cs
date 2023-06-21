@@ -63,6 +63,16 @@ namespace Wally.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap no_preview {
+            get {
+                object obj = ResourceManager.GetObject("no_preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap preview {
             get {
                 object obj = ResourceManager.GetObject("preview", resourceCulture);

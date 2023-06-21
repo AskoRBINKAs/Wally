@@ -11,6 +11,7 @@ namespace Wally
         public string Name { get; set; }
         public string PathToVideo { get; set; }
         public string PathToLogo { get; set; }
+        public int Index { get; set; }  
 
         public bool IsCorrupted = false;
         public Wallpaper(string name, string pathToVideo, string pathToLogo)

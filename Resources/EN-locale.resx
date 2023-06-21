@@ -120,6 +120,27 @@
   <data name="AddButtonText" xml:space="preserve">
     <value>Add</value>
   </data>
+  <data name="CreatorAddFileButtonText" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="CreatorButtonText" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreatorCreateButtonText" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreatorNameLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CreatorPreviewLabel" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="CreatorTitleLabel" xml:space="preserve">
+    <value>Create new wallpaper from files</value>
+  </data>
+  <data name="CreatorVideoLabel" xml:space="preserve">
+    <value>Video</value>
+  </data>
   <data name="GalleryButtonText" xml:space="preserve">
     <value>Gallery</value>
   </data>

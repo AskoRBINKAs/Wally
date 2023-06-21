@@ -70,6 +70,69 @@ namespace Wally.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Добавить.
+        /// </summary>
+        internal static string CreatorAddFileButtonText {
+            get {
+                return ResourceManager.GetString("CreatorAddFileButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать.
+        /// </summary>
+        internal static string CreatorButtonText {
+            get {
+                return ResourceManager.GetString("CreatorButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать.
+        /// </summary>
+        internal static string CreatorCreateButtonText {
+            get {
+                return ResourceManager.GetString("CreatorCreateButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Имя.
+        /// </summary>
+        internal static string CreatorNameLabel {
+            get {
+                return ResourceManager.GetString("CreatorNameLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Превью.
+        /// </summary>
+        internal static string CreatorPreviewLabel {
+            get {
+                return ResourceManager.GetString("CreatorPreviewLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Создать новые обои из файлов.
+        /// </summary>
+        internal static string CreatorTitleLabel {
+            get {
+                return ResourceManager.GetString("CreatorTitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Видео.
+        /// </summary>
+        internal static string CreatorVideoLabel {
+            get {
+                return ResourceManager.GetString("CreatorVideoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Обои.
         /// </summary>
         internal static string GalleryButtonText {

@@ -120,6 +120,27 @@
   <data name="AddButtonText" xml:space="preserve">
     <value>Добавить</value>
   </data>
+  <data name="CreatorAddFileButtonText" xml:space="preserve">
+    <value>Добавить</value>
+  </data>
+  <data name="CreatorButtonText" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="CreatorCreateButtonText" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="CreatorNameLabel" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="CreatorPreviewLabel" xml:space="preserve">
+    <value>Превью</value>
+  </data>
+  <data name="CreatorTitleLabel" xml:space="preserve">
+    <value>Создать новые обои из файлов</value>
+  </data>
+  <data name="CreatorVideoLabel" xml:space="preserve">
+    <value>Видео</value>
+  </data>
   <data name="GalleryButtonText" xml:space="preserve">
     <value>Обои</value>
   </data>
