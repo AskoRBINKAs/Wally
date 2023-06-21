@@ -30,6 +30,8 @@
 3. Выбрать этот файл кнопкой Add
 4. ВАЖНО - расположите обои в отдельном каталоге, который не будет удаляться и т.д.! Программа чувствительна к пути расположения видео и превью! Также избегайте кириллицы в путях установки утилиты и расположения обоев
 
+Другой способ - во вкладке Создать/Create указать путь к файлам по отдельности (файл для превью необязателен)
+
 ## Баги
 1. Проблема со сменой языка - кнопки Gallery/Обои и Settings/Параметры меняются только при перезагрузке приложения. Остальный поля работают корректно
 2. Возможны проблемы с автозагрузкой. Решение - создать ярлык и добавить его в папку автозагрузки
@@ -66,6 +68,7 @@ Utility for setting video files as wallpaper. It is based on [Weebp](https://git
 3. Press "Add" in app
 4. IMPORTANT -  Please, place wallpapers in stable directory. Program very sensetive for path to video and preview!!! Also, try to avoid cyrillic symbols in installation path and location wallpapers
 
+Another way - click Create and add needed files (preview file is not neccessary)
 ## Bugs
 1. Localization - after selecting language you need to restart program to apply changes
 2. Bug with autorun - sometimes app cannot read config files and load all wallpapers or start playing video. Solution - restart manualy
