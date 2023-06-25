@@ -1,4 +1,4 @@
-# Wally
+# Wally (Deprecated)
 Утилита для установки видеофайлов как обоев. В основе лежит программа [Weebp](https://github.com/Francesco149/weebp) и плеер [MPV](https://mpv.io).
 <br>
 <br>
