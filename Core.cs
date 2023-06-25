@@ -237,6 +237,7 @@ namespace Wally
 
         public void SetWebWallpaper(ref string URL)
         {
+            KillPreviousMPV();
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.Arguments = @"/C" + ExecutionPath + "web.bat \"" + URL+"\"";
