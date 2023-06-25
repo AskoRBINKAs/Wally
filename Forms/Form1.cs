@@ -6,12 +6,10 @@ namespace Wally
         private static string _weebpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "wp.exe"); 
         private static string _jsonpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "save.json"); 
         private static string _cfgpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "conf.cfg");
-        private static string _playlistpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "playlist.json");
-                
+        private static string _webviewpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "webView.exe");
+        private static string _execpath = Application.ExecutablePath.ToString().Replace("Wally.exe", "");
         private Form _activeForm;
-        private Point mouseDownPoint = Point.Empty;
-
-        public static Core core =  new Core(_weebpath,_jsonpath,_cfgpath);
+        public static Core core =  new Core(_weebpath,_jsonpath,_cfgpath,_webviewpath,_execpath);
 
         // for drag and move
         
@@ -65,7 +63,8 @@ namespace Wally
         {
             CheckExistingModules();
             this.BackColor = ColorTranslator.FromHtml("#30343F");
-            panel1.BackColor = ColorTranslator.FromHtml("#19369F");
+            //panel1.BackColor = ColorTranslator.FromHtml("#19369F");
+            panel1.BackColor = ColorTranslator.FromHtml("#2E9AB5");
             OpenChildForm(new Forms.Gallery(), sender);
             GalleryButton.BackColor = ColorTranslator.FromHtml("#30343F");
             Localize();           
@@ -76,7 +75,8 @@ namespace Wally
                 if(wall.Name == core.LastWallpaperName)
                 {
                     string link = wall.PathToVideo;
-                    core.SetWallpaper(ref link);
+                    if (wall.IsWeb) core.SetWebWallpaper(ref link);
+                    else core.SetWallpaper(ref link);
                     core.LastWallpaperName = wall.Name;
                     break;
                 }
@@ -100,12 +100,10 @@ namespace Wally
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-                this.ShowInTaskbar = false;
-                notifyIcon1.Visible = true;
-            }
+            this.Hide();
+            this.ShowInTaskbar = false;
+            notifyIcon1.Visible = true;
+            
         }
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -126,7 +124,6 @@ namespace Wally
             SettingsButton.BackColor = ColorTranslator.FromHtml("#30343F");
             GalleryButton.BackColor = Color.FromArgb(0, Color.Black);
             CreateButton.BackColor = Color.FromArgb(0, Color.Black);
-            PlaylistButton.BackColor = Color.FromArgb(0, Color.Black);
         }
 
         private void GalleryButton_Click(object sender, EventArgs e)
@@ -135,7 +132,6 @@ namespace Wally
             GalleryButton.BackColor = ColorTranslator.FromHtml("#30343F");
             SettingsButton.BackColor = Color.FromArgb(0, Color.Black);
             CreateButton.BackColor = Color.FromArgb(0, Color.Black);
-            PlaylistButton.BackColor = Color.FromArgb(0, Color.Black);
         }
 
         //display other forms inside main form as page
@@ -162,8 +158,8 @@ namespace Wally
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Show();
             this.WindowState = FormWindowState.Normal;
-
             this.ShowInTaskbar = true;
         }
 
@@ -188,7 +184,6 @@ namespace Wally
             GalleryButton.BackColor = Color.FromArgb(0, Color.Black);
             CreateButton.BackColor = ColorTranslator.FromHtml("#30343F");
             SettingsButton.BackColor = Color.FromArgb(0, Color.Black);
-            PlaylistButton.BackColor = Color.FromArgb(0, Color.Black);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -197,13 +192,5 @@ namespace Wally
             PostMessage(this.Handle, WM_SYSCOMMAND, DOMOVE, 0);
         }
 
-        private void PlaylistButton_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.PlaylistForm(), sender);
-            GalleryButton.BackColor = Color.FromArgb(0, Color.Black);
-            CreateButton.BackColor = Color.FromArgb(0, Color.Black);
-            SettingsButton.BackColor = Color.FromArgb(0, Color.Black);
-            PlaylistButton.BackColor = ColorTranslator.FromHtml("#30343F");
-        }
     }
 }

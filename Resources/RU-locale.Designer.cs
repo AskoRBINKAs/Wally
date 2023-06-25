@@ -124,7 +124,7 @@ namespace Wally.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Видео.
+        ///   Ищет локализованную строку, похожую на Медиа.
         /// </summary>
         internal static string CreatorVideoLabel {
             get {
@@ -165,6 +165,33 @@ namespace Wally.Resources {
         internal static string SettingsButtonText {
             get {
                 return ResourceManager.GetString("SettingsButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Включить логгирование.
+        /// </summary>
+        internal static string SettingsLogCheckBox {
+            get {
+                return ResourceManager.GetString("SettingsLogCheckBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Дополнительные параметры MPV (для опытных пользователей).
+        /// </summary>
+        internal static string SettingsMPVAddArgsText {
+            get {
+                return ResourceManager.GetString("SettingsMPVAddArgsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Громкость.
+        /// </summary>
+        internal static string SettingsVolumeText {
+            get {
+                return ResourceManager.GetString("SettingsVolumeText", resourceCulture);
             }
         }
         

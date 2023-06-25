@@ -46,7 +46,14 @@ namespace Wally.Forms
 
         private void SetWall_Click_1(object sender, EventArgs e)
         {
-            Form1.core.SetWallpaper(ref PathToVideo);
+            if (wallpaper.IsWeb)
+            {
+                Form1.core.SetWebWallpaper(ref PathToVideo);
+            }
+            else
+            {
+                Form1.core.SetWallpaper(ref PathToVideo);
+            }
             Form1.core.LastWallpaperName = Title;
         }
 
@@ -61,9 +68,6 @@ namespace Wally.Forms
             _gallery.Reload(sender,e);
         }
 
-        private void addToPlaylistToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form1.core.Walls.Add(wallpaper);
-        }
+  
     }
 }

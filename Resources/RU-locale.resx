@@ -139,7 +139,7 @@
     <value>Создать новые обои из файлов</value>
   </data>
   <data name="CreatorVideoLabel" xml:space="preserve">
-    <value>Видео</value>
+    <value>Медиа</value>
   </data>
   <data name="GalleryButtonText" xml:space="preserve">
     <value>Обои</value>
@@ -152,6 +152,15 @@
   </data>
   <data name="SettingsButtonText" xml:space="preserve">
     <value>Параметры</value>
+  </data>
+  <data name="SettingsLogCheckBox" xml:space="preserve">
+    <value>Включить логгирование</value>
+  </data>
+  <data name="SettingsMPVAddArgsText" xml:space="preserve">
+    <value>Дополнительные параметры MPV (для опытных пользователей)</value>
+  </data>
+  <data name="SettingsVolumeText" xml:space="preserve">
+    <value>Громкость</value>
   </data>
   <data name="StartupCheckBoxText" xml:space="preserve">
     <value>Запускать с системой</value>

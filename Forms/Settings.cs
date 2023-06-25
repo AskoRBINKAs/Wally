@@ -36,10 +36,39 @@ namespace Wally.Forms
             label2.BackColor = Color.Transparent;
             VersionLabel.Text = Form1.core.Version;
             StartupBox.Checked = IsInStartup();
+            LogCheckBox.Checked = Form1.core.logging;
             LanguageBox.Items.Add("Русский");
             LanguageBox.Items.Add("English");
+            FPSBox.Items.Add("15");
+            FPSBox.Items.Add("24");
+            FPSBox.Items.Add("30");
+            FPSBox.Items.Add("60");
             LanguageBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            FPSBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            VolumeTrackBar.Value = Form1.core.Volume;
+            VolumePercentLabel.Text = Form1.core.Volume.ToString();
+            DefaultSettedArgsLabel.Text += Form1.core.DefaultMPVArgs;
+            ArgsFieldBox.Text = Form1.core.AdditionalMPVArgs;
             Localize();
+            //setup FPS in box
+            switch (Form1.core.Framerate)
+            {
+                case 15:
+                    FPSBox.SelectedIndex = 0;
+                    break;
+                case 24:
+                    FPSBox.SelectedIndex = 1;
+                    break;
+                case 30:
+                    FPSBox.SelectedIndex = 2;
+                    break;
+                case 60:
+                    FPSBox.SelectedIndex = 3;
+                    break;
+                default:
+                    FPSBox.SelectedIndex = 0;
+                    break;
+            }
         }
         
         private void Localize()
@@ -50,6 +79,9 @@ namespace Wally.Forms
                 StartupBox.Text = Resources.RU_locale.StartupCheckBoxText;
                 LanguageLabel.Text = Resources.RU_locale.SelectLangugeText;
                 LogLabel.Text = Resources.RU_locale.LogBoxText;
+                LogCheckBox.Text = Resources.RU_locale.SettingsLogCheckBox;
+                VolumeLabel.Text = Resources.RU_locale.SettingsVolumeText;
+                MPVArgsLabel.Text = Resources.RU_locale.SettingsMPVAddArgsText;
             }
             else
             {
@@ -57,6 +89,9 @@ namespace Wally.Forms
                 StartupBox.Text = Resources.EN_locale.StartupCheckBoxText;
                 LanguageLabel.Text = Resources.EN_locale.SelectLangugeText;
                 LogLabel.Text = Resources.EN_locale.LogBoxText;
+                LogCheckBox.Text = Resources.EN_locale.SettingsLogCheckBox;
+                VolumeLabel.Text = Resources.EN_locale.SettingsVolumeText;
+                MPVArgsLabel.Text = Resources.EN_locale.SettingsMPVAddArgsText;
             }
         }
 
@@ -101,5 +136,52 @@ namespace Wally.Forms
             }
         }
 
+        private void FPSBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (FPSBox.SelectedIndex)
+            {
+                case 0:
+                    Form1.core.Framerate = 15;
+                    break;
+                case 1:
+                    Form1.core.Framerate = 24;
+                    break;
+                case 2:
+                    Form1.core.Framerate = 30;
+                    break;
+                case 3:
+                    Form1.core.Framerate = 60;
+                    break;
+                default:
+                    break;
+            }
+            //MessageBox.Show(Form1.core.Framerate.ToString()+"\n"+FPSBox.SelectedIndex.ToString());
+        }
+
+        private void LogCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if(LogCheckBox.Checked == true)
+            {
+                Form1.core.logging = true;
+            }
+            else
+            {
+                Form1.core.logging = false;
+            }
+        }
+
+        private void VolumeTrackBar_Scroll(object sender, EventArgs e)
+        {
+            Form1.core.Volume = VolumeTrackBar.Value;
+            VolumePercentLabel.Text = VolumeTrackBar.Value.ToString();
+          //  MessageBox.Show(Form1.core.Volume.ToString());
+        }
+
+
+
+        private void ArgsFieldBox_TextChanged(object sender, EventArgs e)
+        {
+            Form1.core.AdditionalMPVArgs = ArgsFieldBox.Text;
+        }
     }
 }

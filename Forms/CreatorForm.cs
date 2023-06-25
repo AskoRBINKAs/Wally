@@ -53,6 +53,7 @@ namespace Wally.Forms
             VideoLabel.BackColor = ColorTranslator.FromHtml("#30343F");
             PreviewLabel.BackColor = ColorTranslator.FromHtml("#30343F");
             TitleCreatorForm.BackColor = ColorTranslator.FromHtml("#30343F");
+            IsWebBox.BackColor = ColorTranslator.FromHtml("#30343F");
             Localize();
         }
 
@@ -86,7 +87,7 @@ namespace Wally.Forms
                 _previewPath = "holder";
             }
             _title = NameBox.Text;
-            Form1.core.AddWallpaper(new Wallpaper(_title,_videoPath,_previewPath));
+            Form1.core.AddWallpaper(new Wallpaper(_title,_videoPath,_previewPath,IsWebBox.Checked));
         }
     }
 }

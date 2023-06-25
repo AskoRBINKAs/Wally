@@ -139,7 +139,7 @@
     <value>Create new wallpaper from files</value>
   </data>
   <data name="CreatorVideoLabel" xml:space="preserve">
-    <value>Video</value>
+    <value>Media</value>
   </data>
   <data name="GalleryButtonText" xml:space="preserve">
     <value>Gallery</value>
@@ -152,6 +152,15 @@
   </data>
   <data name="SettingsButtonText" xml:space="preserve">
     <value>Settings</value>
+  </data>
+  <data name="SettingsLogCheckBox" xml:space="preserve">
+    <value>Enable logging</value>
+  </data>
+  <data name="SettingsMPVAddArgsText" xml:space="preserve">
+    <value>MPV additional args (only for experts)</value>
+  </data>
+  <data name="SettingsVolumeText" xml:space="preserve">
+    <value>Volume</value>
   </data>
   <data name="StartupCheckBoxText" xml:space="preserve">
     <value>Startup with Windows</value>

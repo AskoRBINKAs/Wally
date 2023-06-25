@@ -12,75 +12,89 @@ namespace Wally
 {
     public class Core
     {
-        /*
-         * Methods and params for playlist now are empty, but in next updates will be created
-         */
-        public string Version = "v1.1";
+        public string Version = "v1.2";
         public string WPPath;
+        public string WebViewPath;
         public string JSONSavePath;
         public string ConfigFile;
+        public string ExecutionPath = "";
         public string PlaylistSavePath = "";
         public string Language = "en";
         public string LastWallpaperName = "";
+        public string AdditionalMPVArgs = "";
+        public string DefaultMPVArgs = " run mpv --force-window=yes --loop=inf --hwdec=auto --vo=gpu --no-correct-pts --player-operation-mode=pseudo-gui ";
         public StringBuilder logs;
         public int WeebPID = -1;
         public int Framerate = 15;
+        public int Volume = 0;
         public List<Wallpaper> Walls;
         public List<Wallpaper> Playlist;
+        public bool logging = false;
 
-        public Core(string wpath,string jsonpath, string cfgpath)
+        private Configuration _configuration;
+        public Core(string wpath,string jsonpath, string cfgpath, string webviewpath, string executionPath)
         {
             logs = new StringBuilder();
             WPPath = wpath;
             JSONSavePath = jsonpath;
             ConfigFile = cfgpath;
-
+            WebViewPath = webviewpath;
             LoadConfig();
             GetMPVPID();
             LoadWallpapers();
-            LoadPlaylist();
-            
-            
+            ExecutionPath = executionPath;
         }
 
-        public void LoadPlaylist()
-        {
-            return;
-        }
 
-        public void SavePlaylist()
-        {
-            return;
-        }
+
         public void SaveConfig()
         {
-            return;
+            _configuration.isLogging = logging;
+            _configuration.FPS = Framerate;
+            _configuration.Language = Language;
+            _configuration.AdditionalArguments = AdditionalMPVArgs;
+            _configuration.LastPlayedWallpaper = LastWallpaperName;
+            _configuration.Volume = Volume;
+            using(StreamWriter sw = new StreamWriter(ConfigFile, append: false))
+            {
+                sw.WriteLine(JsonSerializer.Serialize(_configuration));
+            }
+            
         }
         public void LoadConfig()
         {
             if (File.Exists(ConfigFile))
             {
-                using (StreamReader streamReader = new StreamReader(ConfigFile))
+                _configuration = JsonSerializer.Deserialize<Configuration>(File.ReadAllText(ConfigFile));
+                if (_configuration != null)
                 {
-                    List<string> props = new List<string>();
-                    while (!streamReader.EndOfStream)
-                    {
-                        props.Add(streamReader.ReadLine());
-                    }
-                    Language = props[0];
-                    LastWallpaperName = props[1];
-                } 
+                    Language = _configuration.Language;
+                    LastWallpaperName = _configuration.LastPlayedWallpaper;
+                    AdditionalMPVArgs = _configuration.AdditionalArguments;
+                    logging = _configuration.isLogging;
+                    Framerate = _configuration.FPS;
+                    Volume = _configuration.Volume;
+                }
+                else
+                {
+                    _configuration = new Configuration();
+                    Log("Configuration file corrupted");
+                }
             }
             else
             {
                 Log("Configuration file does not exist. It will be created for next time");
                 Language = "en";
                 LastWallpaperName = "";
+                _configuration = new Configuration();
             }
         }
         public void Log(string info)
         {
-            logs.AppendLine("["+DateTime.Now.ToString()+"] : "+info);
+            if (logging)
+            {
+                logs.AppendLine("[" + DateTime.Now.ToString() + "] : " + info);
+            }
         }
         public void LoadWallpapers()
         {
@@ -163,6 +177,14 @@ namespace Wally
                 counter++;
             }
             Log(counter.ToString() + " MPV processes was killed");
+            foreach(var process in Process.GetProcessesByName("wp"))
+            {
+                process.Kill();
+            }
+            foreach(var process in Process.GetProcessesByName("webView"))
+            {
+                process.Kill();
+            }
             try
             {
                 Process killer = new Process();
@@ -208,18 +230,17 @@ namespace Wally
             process.StartInfo.FileName = WPPath;
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
-            process.StartInfo.Arguments = " run mpv --force-window=yes --loop=inf --no-audio  --fps="+Framerate+" -no-correct-pts --player-operation-mode=pseudo-gui --wid=" + WeebPID.ToString() + " \"" +PathToVideo + "\"";
-            
+            process.StartInfo.Arguments = DefaultMPVArgs+AdditionalMPVArgs+ " --volume="+Volume.ToString()+" --fps=" + Framerate+" --wid=" + WeebPID.ToString() + " \"" +PathToVideo + "\"";
             process.Start();
             Log("Setting wallpaper from " + PathToVideo);
         }
 
-        
-        public void PlayPlaylist()
+        public void SetWebWallpaper(ref string URL)
         {
-            
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = @"/C" + ExecutionPath + "web.bat \"" + URL+"\"";
+            process.Start();
         }
-
-
     }
 }

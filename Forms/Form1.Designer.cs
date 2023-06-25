@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PlaylistButton = new System.Windows.Forms.Button();
             this.CreateButton = new System.Windows.Forms.Button();
             this.SwapButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +50,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Red;
-            this.panel1.Controls.Add(this.PlaylistButton);
             this.panel1.Controls.Add(this.CreateButton);
             this.panel1.Controls.Add(this.SwapButton);
             this.panel1.Controls.Add(this.label1);
@@ -61,15 +59,6 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            // 
-            // PlaylistButton
-            // 
-            this.PlaylistButton.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.PlaylistButton, "PlaylistButton");
-            this.PlaylistButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.PlaylistButton.Name = "PlaylistButton";
-            this.PlaylistButton.UseVisualStyleBackColor = true;
-            this.PlaylistButton.Click += new System.EventHandler(this.PlaylistButton_Click);
             // 
             // CreateButton
             // 
@@ -192,6 +181,5 @@
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem stopToolStripMenuItem;
         private Button CreateButton;
-        private Button PlaylistButton;
     }
 }

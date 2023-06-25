@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.IsWebBox = new System.Windows.Forms.CheckBox();
             this.CreateButton = new System.Windows.Forms.Button();
             this.AddPreviewPath = new System.Windows.Forms.Button();
             this.AddVideoButton = new System.Windows.Forms.Button();
@@ -45,6 +46,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Controls.Add(this.IsWebBox);
             this.panel1.Controls.Add(this.CreateButton);
             this.panel1.Controls.Add(this.AddPreviewPath);
             this.panel1.Controls.Add(this.AddVideoButton);
@@ -61,9 +63,21 @@
             this.panel1.Size = new System.Drawing.Size(1168, 571);
             this.panel1.TabIndex = 0;
             // 
+            // IsWebBox
+            // 
+            this.IsWebBox.AutoSize = true;
+            this.IsWebBox.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.IsWebBox.ForeColor = System.Drawing.SystemColors.Control;
+            this.IsWebBox.Location = new System.Drawing.Point(599, 111);
+            this.IsWebBox.Name = "IsWebBox";
+            this.IsWebBox.Size = new System.Drawing.Size(104, 19);
+            this.IsWebBox.TabIndex = 10;
+            this.IsWebBox.Text = "WEB wallpaper";
+            this.IsWebBox.UseVisualStyleBackColor = false;
+            // 
             // CreateButton
             // 
-            this.CreateButton.Location = new System.Drawing.Point(83, 216);
+            this.CreateButton.Location = new System.Drawing.Point(85, 195);
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(133, 23);
             this.CreateButton.TabIndex = 9;
@@ -73,7 +87,7 @@
             // 
             // AddPreviewPath
             // 
-            this.AddPreviewPath.Location = new System.Drawing.Point(502, 170);
+            this.AddPreviewPath.Location = new System.Drawing.Point(504, 149);
             this.AddPreviewPath.Name = "AddPreviewPath";
             this.AddPreviewPath.Size = new System.Drawing.Size(75, 23);
             this.AddPreviewPath.TabIndex = 8;
@@ -83,7 +97,7 @@
             // 
             // AddVideoButton
             // 
-            this.AddVideoButton.Location = new System.Drawing.Point(502, 118);
+            this.AddVideoButton.Location = new System.Drawing.Point(504, 109);
             this.AddVideoButton.Name = "AddVideoButton";
             this.AddVideoButton.Size = new System.Drawing.Size(75, 23);
             this.AddVideoButton.TabIndex = 7;
@@ -93,7 +107,7 @@
             // 
             // PreviewPathBox
             // 
-            this.PreviewPathBox.Location = new System.Drawing.Point(83, 169);
+            this.PreviewPathBox.Location = new System.Drawing.Point(85, 148);
             this.PreviewPathBox.Name = "PreviewPathBox";
             this.PreviewPathBox.ReadOnly = true;
             this.PreviewPathBox.Size = new System.Drawing.Size(394, 23);
@@ -105,7 +119,7 @@
             this.PreviewLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.PreviewLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PreviewLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.PreviewLabel.Location = new System.Drawing.Point(12, 169);
+            this.PreviewLabel.Location = new System.Drawing.Point(12, 148);
             this.PreviewLabel.Name = "PreviewLabel";
             this.PreviewLabel.Size = new System.Drawing.Size(65, 21);
             this.PreviewLabel.TabIndex = 5;
@@ -113,9 +127,8 @@
             // 
             // VideoPathBox
             // 
-            this.VideoPathBox.Location = new System.Drawing.Point(83, 118);
+            this.VideoPathBox.Location = new System.Drawing.Point(85, 109);
             this.VideoPathBox.Name = "VideoPathBox";
-            this.VideoPathBox.ReadOnly = true;
             this.VideoPathBox.Size = new System.Drawing.Size(394, 23);
             this.VideoPathBox.TabIndex = 4;
             // 
@@ -125,7 +138,7 @@
             this.VideoLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.VideoLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.VideoLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.VideoLabel.Location = new System.Drawing.Point(12, 118);
+            this.VideoLabel.Location = new System.Drawing.Point(12, 108);
             this.VideoLabel.Name = "VideoLabel";
             this.VideoLabel.Size = new System.Drawing.Size(50, 21);
             this.VideoLabel.TabIndex = 3;
@@ -133,7 +146,7 @@
             // 
             // NameBox
             // 
-            this.NameBox.Location = new System.Drawing.Point(83, 70);
+            this.NameBox.Location = new System.Drawing.Point(85, 70);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(394, 23);
             this.NameBox.TabIndex = 2;
@@ -190,5 +203,6 @@
         private Label VideoLabel;
         private TextBox NameBox;
         private Button CreateButton;
+        private CheckBox IsWebBox;
     }
 }

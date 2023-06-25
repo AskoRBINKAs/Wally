@@ -14,11 +14,13 @@ namespace Wally
         public int Index { get; set; }  
 
         public bool IsCorrupted = false;
-        public Wallpaper(string name, string pathToVideo, string pathToLogo)
+        public bool IsWeb { get; set; }
+        public Wallpaper(string name, string pathToVideo, string pathToLogo, bool isWeb)
         {
             Name = name;
             PathToVideo = pathToVideo;
             PathToLogo = pathToLogo;
+            IsWeb = isWeb;
         }
     }
 }
