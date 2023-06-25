@@ -2,10 +2,13 @@
 Утилита для установки видеофайлов как обоев. В основе лежит программа [Weebp](https://github.com/Francesco149/weebp) и плеер [MPV](https://mpv.io).
 <br>
 <br>
-![](https://github.com/AskoRBINKAs/Wally/blob/master/0QUWXk1ghbU.jpg)
+![](https://github.com/AskoRBINKAs/Wally/blob/master/Qe3PC9W8iGw.jpg)
 <br>
-![](https://github.com/AskoRBINKAs/Wally/blob/master/3Rg_JfIQYr0.jpg)
+![](https://github.com/AskoRBINKAs/Wally/blob/master/5y0DJD0JxoE.jpg)
 <br>
+![](https://github.com/AskoRBINKAs/Wally/blob/master/hGp07Qi1X3k.jpg)
+<br>
+![](https://github.com/AskoRBINKAs/Wally/blob/master/yoJS-HCnZFg.jpg)
 <br>
 ## Возможности:<br>
 - [x] Добавлять видео (.mp4; .avi; .gif; .webm; .mov; .mkv)
