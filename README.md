@@ -9,6 +9,8 @@
 <br>
 ## Возможности:<br>
 - [x] Добавлять видео (.mp4; .avi; .gif; .webm; .mov; .mkv)
+- [x] Ставить веб страницы на обои (через URL или из HTML файла) без интерактива
+- [x] Добавлена кастомизация параметров запуска MPV 
 - [x] Добавить в автозагрузку
 - [x] Сворачивать в трей
 - [x] Есть поддержка двух языков - русский и английский (выбирать вручную)
@@ -34,18 +36,18 @@
 
 ## Баги
 1. Проблема со сменой языка - кнопки Gallery/Обои и Settings/Параметры меняются только при перезагрузке приложения. Остальный поля работают корректно
-2. Плеер MPV потребляет много ОЗУ. Текущее решение - лок фреймрейта в 15 FPS
+2. Возможны баги с разворачиванием окна
 
 ## Планы на будущее
 1. Добавить создание и воспроизведение обоев из плейлистов
-2. Оптимизация
-3. Добавить возможность использования html страниц как обои
 
 # ENGLISH
 Utility for setting video files as wallpaper. It is based on [Weebp](https://github.com/Francesco149/weebp) and [MPV](https://mpv.io).
 <br>
 ## Features
 - [x] Using video (.mp4; .avi; .gif; .webm; .mov; .mkv) as wallpaper
+- [x] Using web pages (by URL or HTML File) as wallpaper without interacting
+- [x] Customizing MPV run arguments 
 - [x] Add program to autorun
 - [x] Roll up to ray
 - [x] Support 2 languages - Russian and English
@@ -71,9 +73,8 @@ Utility for setting video files as wallpaper. It is based on [Weebp](https://git
 Another way - click Create and add needed files (preview file is not neccessary)
 ## Bugs
 1. Localization - after selecting language you need to restart program to apply changes
-2. MPV used a lot of memory (in comparing with Wallpaper Engine). Current solve - setting video playing in 15 FPS;
+2. May bugs with opening main window
 
 ## TODO:
 1. Add playlists system
-2. Optimization (Maybe change videoplayer)
-3. Add WebView for playing from URL or HTML Projects
+
